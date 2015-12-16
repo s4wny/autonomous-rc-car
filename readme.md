@@ -4,7 +4,7 @@
 ## Stack
 
 - Arduino UNO Rev 3
-- [Relay for arduino](http://www.lctech-inc.com/Hardware/Detail.aspx?id=a6d5bfce-60df-4726-bf86-a86a04e907ad) by [lctech-inc.com](http://www.lctech-inc.com/Hardware/Detail.aspx?id=a6d5bfce-60df-4726-bf86-a86a04e907ad) ""
+- [Relay ("RE-2578ay") for arduino](http://www.kjell.com/se/sortiment/el/elektronik/arduino/moduler/relamodul-for-arduino-4x2-p87913) by [lctech-inc.com](http://www.lctech-inc.com/Hardware/Detail.aspx?id=a6d5bfce-60df-4726-bf86-a86a04e907ad) 
 - HC-SR04 sensors
 - A LEGO Dirt Crusher 8369
 
@@ -36,7 +36,7 @@ IN1-IN8 should go to digitalPins. COM should also go to a digital pin (as I said
 Connect the RE-2578ay to your arduino, 5V to 5V, GND to GND. IN1-IN8 to digitalPin 2-9. COM to digitalPin 10.
 
 ![re-2578ay-setup-with-arudino](re-2578ay-setup-with-arudino.jpg?raw=true)
-
+([Image source](http://www.kjell.com/se/fraga-kjell/teman/kom-igang-med-arduino))
 
 Then you can use this code to test that the relay work:
 ```
