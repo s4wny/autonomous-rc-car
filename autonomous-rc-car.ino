@@ -19,8 +19,29 @@ void setup() {
     digitalWrite(x, OFF);
   }
   
-  //move(FORWARD, 40);
-  move(RIGHT, 1000);
+  digitalWrite(FORWARD, ON);
+  delay(1000);
+  digitalWrite(RIGHT, ON);
+  delay(1000);
+  digitalWrite(RIGHT, OFF);
+  delay(1000);
+  digitalWrite(LEFT, ON);
+  delay(1000);
+  digitalWrite(LEFT, OFF);
+  delay(500);
+  digitalWrite(FORWARD, OFF);
+  delay(1000);
+
+  digitalWrite(BACKWARD, ON);
+  delay(1000);
+  move(LEFT, 500);
+  move(RIGHT, 500);
+  move(LEFT, 500);
+  move(RIGHT, 500);
+  digitalWrite(BACKWARD, OFF);
+  move(LEFT, 500);
+  move(RIGHT, 500);
+  
 }
 
 // the loop function runs over and over again forever
