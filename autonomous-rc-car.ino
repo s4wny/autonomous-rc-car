@@ -37,7 +37,7 @@
  * do not send out a new sonic wave before the previous one has returned/vanished 
  * Should probably be atleast 100 ms
  */
-#define DELAY_BETWEEN_EACH_STEP 5000
+#define DELAY_BETWEEN_EACH_STEP 1000
 
 
 /**
@@ -102,19 +102,28 @@ void loop() {
  *      where the car has been, and maybe where the car is located currently.
  */
 void theAlgorithm(long dist_front, long dist_left, long dist_right) {
+  bool wheelTurned = false;
+  
   // [1]
   if(dist_front > 40) {
     // [1.1]
     if(dist_left < 20) {
       turnWheel(RIGHT);
+      wheelTurned = true;
     }
 
     // [1.2]
     if(dist_right < 20) {
       turnWheel(LEFT);
+      wheelTurned = true;
     }
-
+  
     digitalWrite(FORWARD, ON);
+
+    // Need extra time if wheels are turned, else it wont move forward at all
+    if(wheelTurned) {
+      delay(70);
+    }
   }
   // [2]
   else {
@@ -126,6 +135,7 @@ void theAlgorithm(long dist_front, long dist_left, long dist_right) {
     }
 
     digitalWrite(BACKWARD, ON);
+    delay(70); //extra time
   }
 
   delay(CAR_SPEED);
@@ -140,7 +150,7 @@ void turnWheel(int direction) {
   digitalWrite(direction, ON);
 
   // Turn the wheels fully before starting to move the car
-  delay(150);
+  delay(300);
 }
 
 
